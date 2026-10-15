@@ -1,0 +1,27 @@
+[package]
+name = "syncp-native-host"
+version = "0.5.4-dev"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+description = "Independent SynCP native architecture proof; not a qualified release"
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.154"
+tiny_http = "=0.12.0"
+getrandom = "=0.4.3"
+fs2 = "=0.4.3"
+subtle = "=2.6.1"
+sha2 = "=0.10.9"
+dirs = "=6.0.0"
+ctrlc = { version = "=3.5.2", features = ["termination"] }
+ureq = { version = "=3.4.2", default-features = false, features = ["rustls"] }
+
+[target.'cfg(unix)'.dependencies]
+nix = { version = "=0.31.3", features = ["process", "signal"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

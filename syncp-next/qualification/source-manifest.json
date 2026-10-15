@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "source_version": "0.5.4-dev",
+  "scope": "selected authored native/UI/Python/test source; no application data/credentials/payloads",
+  "files": [
+    {
+      "path": "native-host/Cargo.lock",
+      "bytes": 18724,
+      "sha256": "5a0ade547d57ae01e5c6c30abd655acb0874b66182c1d6ae94dbe378246d6c27"
+    },
+    {
+      "path": "native-host/Cargo.toml",
+      "bytes": 702,
+      "sha256": "60be10fdd9a013456aea956931e64b30a2aa0ceb56bc3cca48a5391c29e52749"
+    },
+    {
+      "path": "native-host/catalog/runtime-profiles-v1.json",
+      "bytes": 4088,
+      "sha256": "b136244dbe8ab461e99aad658d5f268bbd15ab27f7cccf1450ab243d0909d47d"
+    },
+    {
+      "path": "native-host/src/applications.rs",
+      "bytes": 25122,
+      "sha256": "d7e3df2056995e889d462255e649edb786f15c32cf87b2b6cbf98e24bd0e37bb"
+    },
+    {
+      "path": "native-host/src/auth.rs",
+      "bytes": 1037,
+      "sha256": "71863db4b1403abb662b981d6b21a1f4cf1dda48ce16ebe90e0d96e499a680e0"
+    },
+    {
+      "path": "native-host/src/codex_cloud.rs",
+      "bytes": 10879,
+      "sha256": "0a69da0ff9da1327d7bd9010f65bdd2c948b1955a2c2408a92502616190e6b65"
+    },
+    {
+      "path": "native-host/src/discovery.rs",
+      "bytes": 6673,
+      "sha256": "84384f16bc282f551e349cbba898792c18b444766cf8e44862612430d1d45b57"
+    },
+    {
+      "path": "native-host/src/doctor.rs",
+      "bytes": 8094,
+      "sha256": "d280d5419e25dd12c4e26536a2f3e85299ea6dbeb30c6f684e07c108e9d1eb58"
+    },
+    {
+      "path": "native-host/src/download.rs",
+      "bytes": 6263,
+      "sha256": "d4184cf428fc6608c594d7cc9e931cea4f55f8ea0f63f3e50dbd8ce91c5a3734"
+    },
+    {
+      "path": "native-host/src/installer.rs",
+      "bytes": 34389,
+      "sha256": "c0ef04191451ba2f9217dd5cd007548e015685a063d85cc877db885d271f44a5"
+    },
+    {
+      "path": "native-host/src/main.rs",
+      "bytes": 23840,
+      "sha256": "98237289b46b6c051931bd1a0257d1d744d450ca3c5b5511805aebf26e6dfc7f"
+    },
+    {
+      "path": "native-host/src/onboarding.rs",
+      "bytes": 31562,
+      "sha256": "8b3c2ac0d076d50546171ef29426fc05925faaacf7fc5cf7f328410d9cfd36de"
+    },
+    {
+      "path": "native-host/src/owned_process.rs",
+      "bytes": 2925,
+      "sha256": "600f07bf32209706153e7971e7248c0df78af5a145c88b3d7360ba448ff29e5c"
+    },
+    {
+      "path": "native-host/src/platform.rs",
+      "bytes": 1765,
+      "sha256": "6e5ecad02a2931bf0d44252071dc8ce3d7dd85ffcffd94424d78aa1d3c68e868"
+    },
+    {
+      "path": "native-host/src/state.rs",
+      "bytes": 12095,
+      "sha256": "d7d21e173238ad13d566242ff447847c8215358ece8a1c07795abfb56b04ad5e"
+    },
+    {
+      "path": "web/assets/syncp.css",
+      "bytes": 13596,
+      "sha256": "c5ee9b84f7e7c78c69b93767214d28e031706531f90ee38c21284e11adcb1221"
+    },
+    {
+      "path": "web/assets/synforge-logo.png",
+      "bytes": 1008504,
+      "sha256": "5db643fa187127e8acd5e2abd6c935992a611965370d1afe2ca47396ceb380dd"
+    },
+    {
+      "path": "web/host.js",
+      "bytes": 25229,
+      "sha256": "17ebe344d4de71c58f713140f557641412cc8054e80a00c5781650c0d3929680"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 11992,
+      "sha256": "a5f56d6b901723e129c094c7a28bb59a03d61e45f57d93b43e493cb7b85bba6f"
+    },
+    {
+      "path": "python/syncp_next/__init__.py",
+      "bytes": 100,
+      "sha256": "eaaf3ebd009edf54970f53b0ceec83ec1868be763442db0c7ec5a30ac46e363e"
+    },
+    {
+      "path": "python/syncp_next/context_adapter.py",
+      "bytes": 5606,
+      "sha256": "3f1ed3ac65878c3cbefc4df66add5c03d757692294dfd707607998ce732b9f5d"
+    },
+    {
+      "path": "python/syncp_next/context_filter.py",
+      "bytes": 5320,
+      "sha256": "b3ddcb521e2bbe8b47674dfbbc6b000c32e5e49b2c5a08b42cfb73ed5f751104"
+    },
+    {
+      "path": "python/syncp_next/contracts.py",
+      "bytes": 8465,
+      "sha256": "1fc5c24468dd1cf39b8fa9d75acd6e323dfbb501e9b9fa950417b8f479043473"
+    },
+    {
+      "path": "python/syncp_next/discovery.py",
+      "bytes": 5829,
+      "sha256": "dfca638947e44a8a2659cbac00a273217e55b538e030c23ad3f5d32b31c72b07"
+    },
+    {
+      "path": "python/syncp_next/worker.py",
+      "bytes": 1775,
+      "sha256": "0ae6c4ed7c651fda466d2830960d3709bb161a55e26e3eae7340af1d4f69762d"
+    },
+    {
+      "path": "tests/native_acceptance.py",
+      "bytes": 13817,
+      "sha256": "4758520fb85159a36ef9f57bf68fc49a49ddc50395232c379c77c594e5618763"
+    },
+    {
+      "path": "tests/installer_acceptance.py",
+      "bytes": 7983,
+      "sha256": "85c51f7457c12313ddac49f97666af730e8f406baae721dd5e4b23d086ff3dad"
+    },
+    {
+      "path": "tests/download_acceptance.py",
+      "bytes": 7048,
+      "sha256": "fd66a3ab02d6774014b453c3963f2f8fc1e24873525485da3d5d535d485e158e"
+    },
+    {
+      "path": "tests/doctor_acceptance.py",
+      "bytes": 6360,
+      "sha256": "1818b3d0629104388c83b3d33eee2add4668c90c9146f6f9c4f244f5e59dab9f"
+    },
+    {
+      "path": "tests/host_ui.test.cjs",
+      "bytes": 14480,
+      "sha256": "658e5f9a2a0ef0003b572f086e0be3b1bfd68a58a16aab8680a3c2eb0eaab0e2"
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "bytes": 7438,
+      "sha256": "b9b1951154bb55a486616243c49e3195bb4e668e3dfffe80101d7e7b9bc43bb7"
+    },
+    {
+      "path": "tests/test_context_filter.py",
+      "bytes": 5511,
+      "sha256": "6989e65340718949926745961118ae71a8790ad978814146421d3020b8e70033"
+    },
+    {
+      "path": "qualification/run_native_ci.py",
+      "bytes": 7341,
+      "sha256": "25a868f587ccd07a6b5fa7e9989bf2c76547f9e9494c5f31379e22bd11409713"
+    }
+  ]
+}

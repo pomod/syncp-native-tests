@@ -1,0 +1,66 @@
+name: SynCP native macOS qualification
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'syncp-next/**'
+      - '.github/workflows/native-macos.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-macos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-base:
+    # Free standard public runners only. Private-repository billing is not approved.
+    if: github.event.repository.private == false
+    name: Native ${{ matrix.architecture }} base
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            architecture: arm64
+          - runner: macos-15-intel
+            architecture: x86_64
+    runs-on: ${{ matrix.runner }}
+    env:
+      CARGO_HOME: ${{ runner.temp }}/syncp-cargo
+      CARGO_TARGET_DIR: ${{ runner.temp }}/syncp-build
+      SYNCP_EXPECT_ARCH: ${{ matrix.architecture }}
+    defaults:
+      run:
+        working-directory: syncp-next
+    steps:
+      - name: Read selected source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # official v5 ref checked 2026-10-14
+        with:
+          persist-credentials: false
+      - name: Verify actual native environment and preinstalled tools
+        run: |
+          python3 -c 'import os,platform; assert platform.system()=="Darwin"; assert platform.machine()==os.environ["SYNCP_EXPECT_ARCH"]'
+          rustc --version --verbose
+          cargo --version
+          python3 --version
+          node --version
+      - name: Build pinned native source
+        run: cargo build --manifest-path native-host/Cargo.toml --release --locked --target-dir "$CARGO_TARGET_DIR"
+      - name: Install, restart, preserve data and recover
+        run: |
+          python3 qualification/run_native_ci.py \
+            --binary "$CARGO_TARGET_DIR/release/syncp-native-host" \
+            --output "$RUNNER_TEMP/syncp-native-results" \
+            --expect-system Darwin \
+            --expect-architecture "$SYNCP_EXPECT_ARCH"
+      - name: Retain only declared binaries and sanitized receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # official v4 ref checked 2026-10-14
+        with:
+          name: syncp-macos-${{ matrix.architecture }}-${{ github.sha }}
+          path: ${{ runner.temp }}/syncp-native-results
+          if-no-files-found: warn
+          retention-days: 7

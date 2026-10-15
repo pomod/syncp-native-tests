@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "models": {
+    "q3-coder-next": {
+      "quantization": "UD-Q4_K_XL",
+      "windows_legacy": {
+        "ctx-size": 16384,
+        "parallel": 1,
+        "n-gpu-layers": 999,
+        "flash-attn": "on",
+        "cache-type-k": "q8_0",
+        "cache-type-v": "q8_0",
+        "batch-size": 512,
+        "ubatch-size": 128,
+        "threads": 12,
+        "threads-batch": 16,
+        "jinja": true,
+        "reasoning": "off",
+        "n-cpu-moe": 41
+      },
+      "safe_baseline": {
+        "ctx-size": 4096,
+        "parallel": 1,
+        "n-gpu-layers": 0,
+        "flash-attn": "on",
+        "cache-type-k": "q8_0",
+        "cache-type-v": "q8_0",
+        "batch-size": 128,
+        "ubatch-size": 64,
+        "threads": 12,
+        "threads-batch": 16,
+        "jinja": true,
+        "reasoning": "off",
+        "n-cpu-moe": 41
+      },
+      "profiles": [
+        {
+          "id": "q3-coder-next-linux-vulkan-4070-super-20260928",
+          "category": "daily_sweet_spot",
+          "origin": "calibrated",
+          "match": {
+            "platform": "linux",
+            "backend": "vulkan",
+            "build": "b10969",
+            "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+            "vram_class_gb": 12,
+            "driver": "595.91.07"
+          },
+          "settings": {
+            "ctx-size": 16384,
+            "parallel": 1,
+            "n-gpu-layers": 46,
+            "flash-attn": "on",
+            "cache-type-k": "q8_0",
+            "cache-type-v": "q8_0",
+            "batch-size": 512,
+            "ubatch-size": 128,
+            "threads": 12,
+            "threads-batch": 16,
+            "jinja": true,
+            "reasoning": "off",
+            "n-cpu-moe": 41
+          },
+          "calibration": {
+            "date": "2026-09-28",
+            "source": "docs/runtime/Synforge-Linux-LLM-VRAM-Calibration-2026-09-28.md",
+            "status": "measured",
+            "minimum_free_mib": 904,
+            "decode_tps": 21.72,
+            "prefill_tps": 41.06,
+            "wall_seconds": 8.53,
+            "confirmed_cliff": {
+              "gpu_layers": 47,
+              "idle_free_mib": [
+                570,
+                570
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "qwen38-q4-k-m": {
+      "quantization": "Q4_K_M",
+      "windows_legacy": {
+        "ctx-size": 16384,
+        "parallel": 1,
+        "n-gpu-layers": 32,
+        "flash-attn": "on",
+        "cache-type-k": "q8_0",
+        "cache-type-v": "q8_0",
+        "batch-size": 512,
+        "ubatch-size": 128,
+        "threads": 12,
+        "threads-batch": 16,
+        "jinja": true,
+        "reasoning": "off"
+      },
+      "safe_baseline": {
+        "ctx-size": 4096,
+        "parallel": 1,
+        "n-gpu-layers": 0,
+        "flash-attn": "on",
+        "cache-type-k": "q8_0",
+        "cache-type-v": "q8_0",
+        "batch-size": 128,
+        "ubatch-size": 64,
+        "threads": 12,
+        "threads-batch": 16,
+        "jinja": true,
+        "reasoning": "off"
+      },
+      "profiles": [
+        {
+          "id": "qwen38-q4-k-m-linux-vulkan-4070-super-20260928",
+          "category": "daily_sweet_spot",
+          "origin": "safe",
+          "match": {
+            "platform": "linux",
+            "backend": "vulkan",
+            "build": "b10969",
+            "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+            "vram_class_gb": 12,
+            "driver": "595.91.07"
+          },
+          "settings": {
+            "ctx-size": 16384,
+            "parallel": 1,
+            "n-gpu-layers": 32,
+            "flash-attn": "on",
+            "cache-type-k": "q8_0",
+            "cache-type-v": "q8_0",
+            "batch-size": 512,
+            "ubatch-size": 128,
+            "threads": 12,
+            "threads-batch": 16,
+            "jinja": true,
+            "reasoning": "off"
+          },
+          "calibration": {
+            "date": "2026-09-28",
+            "source": "2026-09-28 runtime handoff; known-good Q4_K_M NGL 32",
+            "status": "known_good"
+          }
+        }
+      ]
+    }
+  }
+}
