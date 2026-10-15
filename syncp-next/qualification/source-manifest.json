@@ -165,8 +165,8 @@
     },
     {
       "path": "qualification/run_native_ci.py",
-      "bytes": 7341,
-      "sha256": "25a868f587ccd07a6b5fa7e9989bf2c76547f9e9494c5f31379e22bd11409713"
+      "bytes": 7387,
+      "sha256": "b1dab12f68b483e2e0af1748519a672991ae8770525e7730a03509750ed03024"
     }
   ]
 }

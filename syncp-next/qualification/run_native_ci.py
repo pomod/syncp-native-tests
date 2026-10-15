@@ -56,7 +56,7 @@ def main():
         # Scrub hex64 in test logs; artifact/source identities are recorded separately.
         text=re.sub(r'\b[0-9a-fA-F]{64}\b','[redacted-hex64]',result.stdout+result.stderr)
         log=output/(name+'.log');log.write_text(text)
-        count_match=re.search(r'Ran (\d+) tests?',text) or re.search(r'(?:ℹ tests|running) (\d+)',text)
+        count_match=re.search(r'Ran (\d+) tests?',text) or re.search(r'(?:ℹ tests|running) (\d+)',text) or re.search(r'^# tests (\d+)\s*$',text,re.M)
         count=int(count_match.group(1)) if count_match else None
         ok=result.returncode==0 and (expected_count is None or count==expected_count)
         entry={'name':name,'exit_code':result.returncode,'result':'PASS' if ok else 'FAIL',
