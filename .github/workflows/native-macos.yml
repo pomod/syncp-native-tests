@@ -29,8 +29,8 @@ jobs:
             architecture: x86_64
     runs-on: ${{ matrix.runner }}
     env:
-      CARGO_HOME: ${{ runner.temp }}/syncp-cargo
-      CARGO_TARGET_DIR: ${{ runner.temp }}/syncp-build
+      CARGO_HOME: ${{ github.workspace }}/.syncp-ci-cargo
+      CARGO_TARGET_DIR: ${{ github.workspace }}/.syncp-ci-build
       SYNCP_EXPECT_ARCH: ${{ matrix.architecture }}
     defaults:
       run:
